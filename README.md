@@ -1,37 +1,103 @@
-# Odoo
+# Odoo Fork
 
-[![Build Status](https://runbot.odoo.com/runbot/badge/flat/1/master.svg)](https://runbot.odoo.com/runbot)
-[![Tech Doc](https://img.shields.io/badge/master-docs-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/documentation/master)
-[![Help](https://img.shields.io/badge/master-help-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/forum/help-1)
-[![Nightly Builds](https://img.shields.io/badge/master-nightly-875A7B.svg?style=flat&colorA=8F8F8F)](https://nightly.odoo.com/)
+This is a community fork of [odoo/odoo](https://github.com/odoo/odoo), an open-source suite of business applications.
 
-Odoo is a suite of web based open source business apps.
+## About
 
-The main Odoo Apps include an [Open Source CRM](https://www.odoo.com/page/crm),
-[Website Builder](https://www.odoo.com/app/website),
-[eCommerce](https://www.odoo.com/app/ecommerce),
-[Warehouse Management](https://www.odoo.com/app/inventory),
-[Project Management](https://www.odoo.com/app/project),
-[Billing &amp; Accounting](https://www.odoo.com/app/accounting),
-[Point of Sale](https://www.odoo.com/app/point-of-sale-shop),
-[Human Resources](https://www.odoo.com/app/employees),
-[Marketing](https://www.odoo.com/app/social-marketing),
-[Manufacturing](https://www.odoo.com/app/manufacturing),
-[...](https://www.odoo.com/)
+Odoo is a suite of web-based open-source business apps. The main Odoo Apps include an **Open Source CRM**, **Website Builder**, **eCommerce**, **Warehouse Management**, **Project Management**, **Billing & Accounting**, **Point of Sale**, **Human Resources**, **Marketing**, **Manufacturing**, and more.
 
-Odoo Apps can be used as stand-alone applications, but they also integrate seamlessly so you get
-a full-featured [Open Source ERP](https://www.odoo.com) when you install several Apps.
+This fork aims to provide community-driven improvements, bug fixes, and additional features on top of the upstream Odoo codebase.
 
-## Getting started with Odoo
+## Getting Started
 
-For a standard installation please follow the [Setup instructions](https://www.odoo.com/documentation/master/administration/install/install.html)
-from the documentation.
+### Prerequisites
 
-To learn the software, we recommend the [Odoo eLearning](https://www.odoo.com/slides),
-or [Scale-up, the business game](https://www.odoo.com/page/scale-up-business-game).
-Developers can start with [the developer tutorials](https://www.odoo.com/documentation/master/developer/howtos.html).
+- Python 3.10+
+- PostgreSQL 13+
+- Node.js 16+ (for frontend assets)
+- wkhtmltopdf (for PDF generation)
 
-## Security
+### Installation
 
-If you believe you have found a security issue, check our [Responsible Disclosure page](https://www.odoo.com/security-report)
-for details and get in touch with us via email.
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/your-org/odoo.git
+   cd odoo
+   ```
+
+2. **Create a virtual environment**
+
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install Python dependencies**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configure the database**
+
+   Create a PostgreSQL database and user:
+
+   ```sql
+   CREATE USER odoo WITH PASSWORD 'odoo';
+   CREATE DATABASE odoo OWNER odoo;
+   ```
+
+5. **Initialize the database**
+
+   ```bash
+   ./odoo-bin -d odoo --init base
+   ```
+
+6. **Start the server**
+
+   ```bash
+   ./odoo-bin -d odoo
+   ```
+
+   The server will be available at `http://localhost:8069`.
+
+## Configuration
+
+Copy the sample configuration file and adjust it to your needs:
+
+```bash
+cp debian/odoo.conf odoo.conf
+```
+
+Then start Odoo with:
+
+```bash
+./odoo-bin -c odoo.conf
+```
+
+## Contributing
+
+We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting a pull request.
+
+- Report bugs using the [Bug Report template](.github/ISSUE_TEMPLATE/1_bug_form.yml)
+- Follow the [Pull Request template](.github/PULL_REQUEST_TEMPLATE.md) when submitting changes
+- Ensure your code follows the existing style and passes all tests
+
+## Running Tests
+
+```bash
+./odoo-bin -d test_db --test-enable --stop-after-init -i base
+```
+
+## License
+
+This project is licensed under the GNU Lesser General Public License v3.0 — see the [LICENSE](LICENSE) file for details.
+
+Some modules are licensed under the Odoo Enterprise Edition License. See [COPYRIGHT](COPYRIGHT) for details.
+
+## Links
+
+- [Upstream Odoo Repository](https://github.com/odoo/odoo)
+- [Odoo Documentation](https://www.odoo.com/documentation)
+- [Community Forum](https://www.odoo.com/forum)
