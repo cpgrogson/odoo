@@ -16,3 +16,7 @@ and/or LICENSE file.
 ---
 Note: This is a personal fork maintained for learning and experimentation.
 No ownership of the original code is claimed.
+
+Fork maintained by: github.com/[my-username]
+Purpose: Studying Odoo's ORM internals and module system.
+Last synced with upstream: 2024-01
