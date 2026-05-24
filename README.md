@@ -82,6 +82,12 @@ Then start Odoo with:
 > ./odoo-bin -c odoo.conf --dev=xml
 > ```
 
+> **Personal note:** I also find it useful to limit the number of workers to 0 (gevent
+> mode) on my local machine to avoid port conflicts and simplify debugging:
+> ```bash
+> ./odoo-bin -c odoo.conf --dev=xml --workers=0
+> ```
+
 ## Contributing
 
 We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting a pull request.
