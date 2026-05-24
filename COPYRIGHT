@@ -19,10 +19,12 @@ No ownership of the original code is claimed.
 
 Fork maintained by: github.com/[my-username]
 Purpose: Studying Odoo's ORM internals and module system.
-Last synced with upstream: 2024-09
+Last synced with upstream: 2024-11
 
 Areas of personal study:
   - models/base.py: ORM field resolution and compute methods
   - addons/base: core module structure and manifest loading
   - osv/expression.py: domain expression parsing and SQL generation
   - fields.py: field descriptor protocol and store/compute lifecycle
+  - api.py: environment and cursor management, registry lifecycle
+
