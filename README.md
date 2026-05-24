@@ -76,6 +76,12 @@ Then start Odoo with:
 ./odoo-bin -c odoo.conf
 ```
 
+> **Personal note:** I typically also pass `--dev=xml` during local development so that
+> view changes are picked up without restarting the server:
+> ```bash
+> ./odoo-bin -c odoo.conf --dev=xml
+> ```
+
 ## Contributing
 
 We welcome contributions! Please read our [Contributing Guidelines](CONTRIBUTING.md) before submitting a pull request.
